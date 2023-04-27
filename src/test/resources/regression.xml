@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RegressionTest in different browsers" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="by.teachmeskills.util.testng.AnnotationTransformer"/>
+        <listener class-name="by.teachmeskills.util.testng.TestListener"/>
+    </listeners>
+    <test name="Tests for Chrome">
+        <classes>
+            <class name="by.teachmeskills.AuthenticationStepEmailTest"/>
+            <class name="by.teachmeskills.AuthenticationStepPersonalDataTest"/>
+            <class name="by.teachmeskills.LoginTest"/>
+            <class name="by.teachmeskills.ProductsPageTest"/>
+            <class name="by.teachmeskills.SearchTest"/>
+            <class name="by.teachmeskills.PersonalPageTest"/>
+            <class name="by.teachmeskills.CartPageTest"/>
+            <class name="by.teachmeskills.CheckoutTest"/>
+            <class name="by.teachmeskills.LogoutTest"/>
+            <parameter name="browser" value="chrome"/>
+        </classes>
+    </test>
+    <test name="Tests for Firefox">
+        <classes>
+            <class name="by.teachmeskills.AuthenticationStepEmailTest"/>
+            <class name="by.teachmeskills.AuthenticationStepPersonalDataTest"/>
+            <class name="by.teachmeskills.LoginTest"/>
+            <class name="by.teachmeskills.ProductsPageTest"/>
+            <class name="by.teachmeskills.SearchTest"/>
+            <class name="by.teachmeskills.PersonalPageTest"/>
+            <class name="by.teachmeskills.CartPageTest"/>
+            <class name="by.teachmeskills.CheckoutTest"/>
+            <class name="by.teachmeskills.LogoutTest"/>
+            <parameter name="browser" value="firefox"/>
+        </classes>
+    </test>
+</suite>
