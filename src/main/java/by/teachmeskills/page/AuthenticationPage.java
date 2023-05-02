@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.Properties;
 
-public class Authentication extends BasePage {
+public class AuthenticationPage extends BasePage {
 
     private static final By SIGN_IN_BUTTON = By.xpath("//a[@class='login']");
     private static final By AUTHENTICATION_TITLE = By.xpath("//h1[@class='page-heading']");
@@ -27,11 +27,11 @@ public class Authentication extends BasePage {
     public static final String LAST_NAME_USER = "Rewq";
     public static final String PASSWORD_USER = "123456";
 
-    public Authentication(WebDriver driver) {
+    public AuthenticationPage(WebDriver driver) {
         super(driver);
     }
 
-    public Authentication open() {
+    public AuthenticationPage open() {
         Properties properties = PropertiesLoader.loadProperties();
         driver.get(properties.getProperty("base.url"));
         driver.findElement(SIGN_IN_BUTTON).click();
@@ -43,15 +43,15 @@ public class Authentication extends BasePage {
         return driver.findElement(AUTHENTICATION_TITLE).isDisplayed();
     }
 
-    public Authentication changeLanguageToEnglish() {
+    public AuthenticationPage changeLanguageToEnglish() {
         driver.findElement(BLOCK_LANGUAGE).click();
         driver.findElement(LANGUAGE_ENGLISH).click();
-        return new Authentication(driver);
+        return new AuthenticationPage(driver);
     }
 
-    public Authentication goToSinInPage() {
+    public AuthenticationPage goToSignInPage() {
         driver.findElement(SIGN_IN).click();
-        return new Authentication(driver);
+        return new AuthenticationPage(driver);
     }
 
     public void getAuthenticationEmail() {
@@ -59,13 +59,13 @@ public class Authentication extends BasePage {
         driver.findElement(BUTTON_CREATE_AN_ACCOUNT).click();
     }
 
-    public Authentication createAnAccount(String emailName) {
+    public AuthenticationPage createAnAccount(String emailName) {
         driver.findElement(EMAIL_ADDRESS_FIELD).sendKeys(emailName);
         driver.findElement(BUTTON_CREATE_AN_ACCOUNT).click();
-        return new Authentication(driver);
+        return new AuthenticationPage(driver);
     }
 
-    public Authentication getStepPersonalInformation(){
+    public AuthenticationPage getStepPersonalInformation(){
         driver.findElement(CREATE_AN_ACCOUNT_TITLE).isDisplayed();
         return this;
     }
@@ -78,8 +78,8 @@ public class Authentication extends BasePage {
         return new PersonalPage(driver);
     }
 
-    public PersonalPage createAnAccountPersonalInformation(String firstlName, String lastName, String passwordName) {
-        driver.findElement(FIRST_NAME).sendKeys(firstlName);
+    public PersonalPage createAnAccountPersonalInformation(String firstName, String lastName, String passwordName) {
+        driver.findElement(FIRST_NAME).sendKeys(firstName);
         driver.findElement(LAST_NAME).sendKeys(lastName);
         driver.findElement(PASSWORD).sendKeys(passwordName);
         driver.findElement(BUTTON_REGISTER).click();

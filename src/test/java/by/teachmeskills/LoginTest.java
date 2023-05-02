@@ -10,9 +10,9 @@ public class LoginTest extends BaseTest {
     @Test
     public void checkValidCredentials() {
         new ProductsPage(driver).open()
-                .changeLanguageToEnglish()
-                .goToSinInPage()
-                .loginAsRegisteredUser();
+                                .changeLanguageToEnglish()
+                                .goToSignInPage()
+                                .loginAsRegisteredUser();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Wrong reaction for valid credentials");
     }
 
@@ -20,7 +20,7 @@ public class LoginTest extends BaseTest {
     public void checkInvalidCredentialsWithEmptyData() {
         new ProductsPage(driver).open()
                                 .changeLanguageToEnglish()
-                                .goToSinInPage()
+                                .goToSignInPage()
                                 .loginWithEmptyData();
             Assert.assertTrue(LoginPage.getErrorMessageOfEmail(), "An error message should be displayed");
     }
@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest {
     public void checkInvalidCredentialsWithoutEmail() {
         new ProductsPage(driver).open()
                                 .changeLanguageToEnglish()
-                                .goToSinInPage()
+                                .goToSignInPage()
                                 .loginWithoutEmail();
         Assert.assertTrue(LoginPage.getErrorMessageOfEmail(), "An error message should be displayed");
     }
@@ -38,7 +38,7 @@ public class LoginTest extends BaseTest {
     public void checkInvalidCredentialsWithoutPassword() {
         new ProductsPage(driver).open()
                                 .changeLanguageToEnglish()
-                                .goToSinInPage()
+                                .goToSignInPage()
                                 .loginWithoutPassword();
         Assert.assertTrue(LoginPage.getErrorMessageOfPassword(), "An error message should be displayed");
     }

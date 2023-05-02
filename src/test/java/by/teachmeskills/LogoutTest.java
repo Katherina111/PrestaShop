@@ -10,10 +10,10 @@ public class LogoutTest extends BaseTest {
     public void checkTheButtonSignOut() {
         new ProductsPage(driver).open()
                                 .changeLanguageToEnglish()
-                                .goToSinInPage()
+                                .goToSignInPage()
                                 .loginAsRegisteredUser()
                                 .goToSinOutPage()
-                                .goToSinInPage();
+                                .goToSignInPage();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Logout doesn't return user on Login page");
     }
 }

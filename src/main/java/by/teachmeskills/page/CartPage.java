@@ -13,7 +13,6 @@ public class CartPage extends BasePage {
     private static final By REMOVE_BUTTON = By.xpath("//i[@class='icon-trash']");
     private static final By PICTURE_PRODUCT = By.xpath("//td[@class='cart_product']");
 
-
     public CartPage(WebDriver driver) {
         super(driver);
     }

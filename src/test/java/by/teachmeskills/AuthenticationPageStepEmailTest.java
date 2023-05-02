@@ -1,29 +1,32 @@
 package by.teachmeskills;
 
-import by.teachmeskills.page.Authentication;
+import by.teachmeskills.page.AuthenticationPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class AuthenticationStepEmailTest extends BaseTest {
+public class AuthenticationPageStepEmailTest extends BaseTest {
+
     @Test
     public void authenticateSuccessEmailStep() {
-        new Authentication(driver).open()
-                                  .changeLanguageToEnglish()
-                                  .goToSinInPage();
-        Assert.assertTrue(new Authentication(driver).isOpened(),"Authentication page has not been opened");
-        new Authentication(driver).getAuthenticationEmail();
-        new Authentication(driver).createAnAccount("qwerty@mail.ru");
-        Assert.assertTrue(new Authentication(driver).isOpened(),"Authentication page (step Email) has not been opened");
+        AuthenticationPage authentication = new AuthenticationPage(driver);
+        authentication.open()
+                      .changeLanguageToEnglish()
+                      .goToSignInPage();
+        Assert.assertTrue(authentication.isOpened(),"Authentication page has not been opened");
+        authentication.getAuthenticationEmail();
+        authentication.createAnAccount("qwerty@mail.ru");
+        Assert.assertTrue(authentication.isOpened(),"Authentication page (step Email) has not been opened");
     }
 
     @Test(dataProvider = "invalidEmail")
     public void authenticateNotSuccessEmailStep(String email, String message) {
-        new Authentication(driver).open()
-                                  .changeLanguageToEnglish()
-                                  .goToSinInPage()
-                                  .createAnAccount(email);
+        AuthenticationPage authentication = new AuthenticationPage(driver);
+        authentication.open()
+                      .changeLanguageToEnglish()
+                      .goToSignInPage()
+                      .createAnAccount(email);
         Assert.assertFalse(driver.findElement(By.xpath("//div[@class='alert alert-danger']"))
                                 .isDisplayed(), message);
     }

@@ -10,7 +10,7 @@ public class ProductsPageTest extends BaseTest {
     public void checkCategoriesOnProductsPage() {
         new ProductsPage(driver).open()
                                 .changeLanguageToEnglish()
-                                .goToSinInPage()
+                                .goToSignInPage()
                                 .loginAsRegisteredUser();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Product Page is not opened.");
         new ProductsPage(driver).goToProductsPage();
@@ -24,7 +24,7 @@ public class ProductsPageTest extends BaseTest {
     public void checkDefaultPopularProducts() {
         new ProductsPage(driver).open()
                                 .changeLanguageToEnglish()
-                                .goToSinInPage()
+                                .goToSignInPage()
                                 .loginAsRegisteredUser();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Product Page is not opened.");
         new ProductsPage(driver).goToProductsPage();
@@ -36,7 +36,7 @@ public class ProductsPageTest extends BaseTest {
     public void checkClickableBestSellers() {
         new ProductsPage(driver).open()
                 .changeLanguageToEnglish()
-                .goToSinInPage()
+                .goToSignInPage()
                 .loginAsRegisteredUser();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Product Page is not opened.");
         new ProductsPage(driver).goToProductsPage();

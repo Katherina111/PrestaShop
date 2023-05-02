@@ -23,7 +23,7 @@ public class ProductsPage extends BasePage {
     private static final By WOMEN_CATEGORY = By.xpath("//a[@href='http://prestashop.qatestlab.com.ua/en/3-women']");
     private static final By DRESSES_CATEGORY = By.xpath("//a[@href='http://prestashop.qatestlab.com.ua/en/8-dresses']");
     private static final By T_SHIRTS_CATEGORY = By.xpath("//a[@href='http://prestashop.qatestlab.com.ua/en/5-tshirts']");
-
+    private static final By ADDED_TO_CART = By.xpath("//i[@class='icon-ok']");
 
     public ProductsPage(WebDriver driver) {
         super(driver);
@@ -47,7 +47,7 @@ public class ProductsPage extends BasePage {
         return driver.findElement(PRODUCTS_TITLE).isDisplayed();
     }
 
-    public LoginPage goToSinInPage() {
+    public LoginPage goToSignInPage() {
         driver.findElement(SIGN_IN).click();
         return new LoginPage(driver);
     }
@@ -93,5 +93,9 @@ public class ProductsPage extends BasePage {
     public ProductsPage clickBestSellers() {
         driver.findElement(BEST_SELLERS).click();
         return new ProductsPage(driver);
+    }
+
+    public boolean checkProductIsAddedToCart() {
+        return driver.findElement(ADDED_TO_CART).isDisplayed();
     }
 }
