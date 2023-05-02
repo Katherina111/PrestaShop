@@ -11,7 +11,7 @@ public class SearchTest extends BaseTest {
     public void checkSearchWithEmptyData() {
         new ProductsPage(driver).open()
                 .changeLanguageToEnglish()
-                .goToSinInPage()
+                .goToSignInPage()
                 .loginAsRegisteredUser();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Product Page is not opened.");
         new Search(driver).resultOfSearch("");
@@ -22,7 +22,7 @@ public class SearchTest extends BaseTest {
     public void checkSearchWithValidData() {
         new ProductsPage(driver).open()
                 .changeLanguageToEnglish()
-                .goToSinInPage()
+                .goToSignInPage()
                 .loginAsRegisteredUser();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Product Page is not opened.");
         new Search(driver).resultOfSearch("grey");
@@ -33,7 +33,7 @@ public class SearchTest extends BaseTest {
     public void checkSearchWithInValidData() {
         new ProductsPage(driver).open()
                 .changeLanguageToEnglish()
-                .goToSinInPage()
+                .goToSignInPage()
                 .loginAsRegisteredUser();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Product Page is not opened.");
         new Search(driver).resultOfSearch("lkfhjfjhjghjke;keorh5");

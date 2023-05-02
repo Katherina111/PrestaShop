@@ -7,8 +7,8 @@
     </listeners>
     <test name="Tests for Chrome">
         <classes>
-            <class name="by.teachmeskills.AuthenticationStepEmailTest"/>
-            <class name="by.teachmeskills.AuthenticationStepPersonalDataTest"/>
+            <class name="by.teachmeskills.AuthenticationPageStepEmailTest"/>
+            <class name="by.teachmeskills.AuthenticationPageStepPersonalDataTest"/>
             <class name="by.teachmeskills.LoginTest"/>
             <class name="by.teachmeskills.ProductsPageTest"/>
             <class name="by.teachmeskills.SearchTest"/>
@@ -21,8 +21,8 @@
     </test>
     <test name="Tests for Firefox">
         <classes>
-            <class name="by.teachmeskills.AuthenticationStepEmailTest"/>
-            <class name="by.teachmeskills.AuthenticationStepPersonalDataTest"/>
+            <class name="by.teachmeskills.AuthenticationPageStepEmailTest"/>
+            <class name="by.teachmeskills.AuthenticationPageStepPersonalDataTest"/>
             <class name="by.teachmeskills.LoginTest"/>
             <class name="by.teachmeskills.ProductsPageTest"/>
             <class name="by.teachmeskills.SearchTest"/>
