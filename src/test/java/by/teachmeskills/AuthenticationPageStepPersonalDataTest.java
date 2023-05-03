@@ -32,7 +32,7 @@ public class AuthenticationPageStepPersonalDataTest extends BaseTest {
         Assert.assertTrue(authenticationNotPersonalInfo.isOpened(), "Authentication page has not been opened");
         authenticationNotPersonalInfo.createAnAccount("123qwerty1234@mail.ru");
         authenticationNotPersonalInfo.getStepPersonalInformation()
-                                  .createAnAccountPersonalInformation(firstName, lastName, passwordName);
+                                     .createAnAccountPersonalInformation(firstName, lastName, passwordName);
         Assert.assertTrue(driver.findElement(By.xpath("//div[@class='alert alert-danger']/p"))
                 .isDisplayed(), message);
     }

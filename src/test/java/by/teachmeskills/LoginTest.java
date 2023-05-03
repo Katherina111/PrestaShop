@@ -10,9 +10,9 @@ public class LoginTest extends BaseTest {
     @Test
     public void checkValidCredentials() {
         new ProductsPage(driver).open()
-                .changeLanguageToEnglish()
-                .goToSignInPage()
-                .loginAsRegisteredUser();
+                                .changeLanguageToEnglish()
+                                .goToSignInPage()
+                                .loginAsRegisteredUser();
         Assert.assertTrue(new ProductsPage(driver).isOpened(), "Wrong reaction for valid credentials");
     }
 

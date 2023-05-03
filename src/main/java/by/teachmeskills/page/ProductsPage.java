@@ -25,7 +25,6 @@ public class ProductsPage extends BasePage {
     private static final By T_SHIRTS_CATEGORY = By.xpath("//a[@href='http://prestashop.qatestlab.com.ua/en/5-tshirts']");
     private static final By ADDED_TO_CART = By.xpath("//i[@class='icon-ok']");
 
-
     public ProductsPage(WebDriver driver) {
         super(driver);
     }

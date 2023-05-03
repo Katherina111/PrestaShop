@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class AuthenticationPageStepEmailTest extends BaseTest {
+
     @Test
     public void authenticateSuccessEmailStep() {
         AuthenticationPage authentication = new AuthenticationPage(driver);

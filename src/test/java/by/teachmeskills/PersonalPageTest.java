@@ -56,6 +56,6 @@ public class PersonalPageTest extends BaseTest {
                     .goToPersonalPage();
         PersonalPage personalPage = new PersonalPage(driver);
         personalPage.isRedirectedToHomePage();
-        Assert.assertTrue(new ProductsPage(driver).isOpened(), "Error! The Products page is not opened.");
+        Assert.assertTrue(new ProductsPage(driver).isOpened(), "Error! Products page is not opened.");
     }
 }
